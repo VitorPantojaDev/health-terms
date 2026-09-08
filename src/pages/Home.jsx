@@ -6,9 +6,9 @@ import TermList from '../components/TermList';
 function Home() {
     const { terms, loading, error } = useTerms();
     const [query, setQuery] = useState('');
-    const filtered = terms.filter((t) =>
-        t.word.toLowerCase().includes(query.toLowerCase())
-    );
+    const filtered = terms
+        .filter((t) => t.word.toLowerCase().includes(query.toLowerCase()))
+        .sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }));
 
     if (loading) return <p className="container">Carregando termos...</p>;
     if (error) return <p className="container">Nao foi possivel carregar os termos agora.</p>;
