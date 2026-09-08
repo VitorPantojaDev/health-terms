@@ -17,7 +17,7 @@ Site desenvolvido para a disciplina de **Front-end Engineering** (FIAP — MBA e
 ## Fontes de dados consumidas
  
 * **BFF do curso:** `https://fiap-bff-10aojr.onrender.com/ask` — vocabulário geral em inglês, criado durante as aulas ([repositório base](https://github.com/jaisonschmidt/fiap-bff)).
-* **API própria do grupo:** `<URL pública da API>/ask` — termos médicos em inglês, desenvolvida pelo grupo. Repositório: [health-terms-api](../../health-terms-api-main).
+* **API própria do grupo:** `https://health-terms-api.onrender.com/ask` — termos médicos em inglês, desenvolvida pelo grupo. Repositório: [health-terms-api](../../health-terms-api-main).
 ## Funcionalidades
  
 * Busca/filtro de termos por palavra.
@@ -38,7 +38,7 @@ Site desenvolvido para a disciplina de **Front-end Engineering** (FIAP — MBA e
 3. Crie um arquivo `.env` na raiz do projeto com as seguintes chaves:
 ```
    VITE_BFF_URL=https://fiap-bff-10aojr.onrender.com/ask
-   VITE_OWN_API_URL=<URL pública da API própria>/ask
+   VITE_OWN_API_URL=https://health-terms-api.onrender.com/ask
 ```
 4. Rode o servidor de desenvolvimento:
 ```bash
