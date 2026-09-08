@@ -53,8 +53,8 @@ O deploy foi feito importando este repositório diretamente no painel da Vercel,
  
 ## Métricas de Web Vitals (Lighthouse)
  
-> Adicionar aqui o print ou PDF do relatório do Lighthouse, gerado sobre o site já publicado na Vercel.
- 
+[📄 Ver relatório completo do Lighthouse (PDF)](./lighthouse-report.pdf)
+
 Resumo do que cada métrica mede:
  
 * **LCP (Largest Contentful Paint):** tempo até o maior elemento visível da tela terminar de carregar — mede a velocidade percebida de carregamento.
