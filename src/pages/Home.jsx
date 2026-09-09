@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar';
 import TermList from '../components/TermList';
 import RandomTermCard from '../components/RandomTermCard';
 import useDebouncedValue from '../hooks/useDebouncedValue';
+import TermSkeleton from '../components/TermSkeleton';
 
 function pickRandom(list) {
   if (!list.length) return null;
@@ -28,7 +29,14 @@ function Home() {
       .sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }));
   }, [terms, debouncedQuery]);
 
-  if (loading) return <p className="container">Carregando termos...</p>;
+    if (loading) {
+        return (
+            <div className="container">
+                <TermSkeleton count={1} />
+            </div>
+        );
+    }
+
   if (error) return <p className="container">Não foi possível carregar os termos agora.</p>;
 
   const isSearching = query.trim().length > 0;
@@ -44,7 +52,7 @@ function Home() {
       {isSearching && (
         filtered.length === 0
           ? <p>Nenhum termo encontrado para "{query}".</p>
-          : <TermList terms={filtered} />
+          : <TermList terms={filtered} query={query} />
       )}
     </div>
   );

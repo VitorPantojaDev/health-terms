@@ -27,3 +27,24 @@
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
 }
+
+mark {
+  background: var(--color-jade-mist);
+  color: var(--color-jade-deep);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.skeleton-card {
+  height: 110px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-line) 25%, var(--color-surface) 50%, var(--color-line) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
