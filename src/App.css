@@ -1,91 +1,29 @@
-/* --- Navbar --- */
-.navbar {
-  background: var(--color-surface) !important;
-  border-bottom: 1px solid var(--color-line);
-}
+.random-term-card { border-left: 3px solid var(--color-cinnabar); }
 
-.navbar-brand {
-  font-family: var(--font-heading);
+.random-badge {
+  background: var(--color-jade-mist);
+  color: var(--color-jade-deep);
   font-weight: 600;
-  color: var(--color-jade) !important;
-  letter-spacing: 0.2px;
-}
-
-.navbar .nav-link {
-  color: var(--color-ink-soft) !important;
-  transition: color 0.15s ease;
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--color-jade) !important;
-}
-
-/* --- Container geral das paginas --- */
-.container {
-  max-width: 720px;
-}
-
-/* --- Campo de busca --- */
-input[type='text'] {
-  width: 100%;
-  padding: 10px 16px;
-  margin-bottom: 24px;
-  border: 1px solid var(--color-line);
+  font-size: 12px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: var(--color-surface);
-  color: var(--color-ink);
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-input[type='text']:focus-visible {
-  border-color: var(--color-jade);
-  box-shadow: 0 0 0 3px var(--color-jade-mist);
-}
-
-input[type='text']::placeholder {
+.search-bar-wrapper { position: relative; }
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 18px;
   color: var(--color-ink-soft);
+  cursor: pointer;
 }
 
-/* --- Cards de termos --- */
-.card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
-  border-left: 3px solid var(--color-jade);
-  border-radius: 4px;
-  box-shadow: none;
-  text-align: left;
-}
-
-.card-title {
-  font-family: var(--font-heading);
-  color: var(--color-jade-deep);
-}
-
-.card-text {
-  color: var(--color-ink);
-}
-
-.card-text.text-muted {
-  color: var(--color-ink-soft) !important;
-}
-
-/* --- Alert (pagina About) --- */
-.alert-info {
-  --bs-alert-color: var(--color-ink);
-  --bs-alert-bg: var(--color-jade-mist);
-  --bs-alert-border-color: var(--color-jade);
-  text-align: left;
-}
-
-.alert-info .alert-heading {
-  font-family: var(--font-heading);
-  color: var(--color-jade-deep);
-}
-
-/* --- Pequeno acento cinabre, usar apenas em um detalhe pontual --- */
-.text-capitalize::first-letter {
-  color: var(--color-cinnabar);
+.term-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
 }
