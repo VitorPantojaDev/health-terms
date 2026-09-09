@@ -3,6 +3,7 @@ import useTerms from '../hooks/useTerms';
 import SearchBar from '../components/SearchBar';
 import TermList from '../components/TermList';
 import RandomTermCard from '../components/RandomTermCard';
+import useDebouncedValue from '../hooks/useDebouncedValue';
 
 function pickRandom(list) {
   if (!list.length) return null;
@@ -12,6 +13,7 @@ function pickRandom(list) {
 function Home() {
   const { terms, loading, error } = useTerms();
   const [query, setQuery] = useState('');
+  const debouncedQuery = useDebouncedValue(query, 250);
   const [randomTerm, setRandomTerm] = useState(null);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function Home() {
     return terms
       .filter((t) => t.word.toLowerCase().includes(q))
       .sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }));
-  }, [terms, query]);
+  }, [terms, debouncedQuery]);
 
   if (loading) return <p className="container">Carregando termos...</p>;
   if (error) return <p className="container">Não foi possível carregar os termos agora.</p>;
